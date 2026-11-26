@@ -25,31 +25,45 @@ int count=0;
         switch(choice)
         {
             case 1:
-    if(count<100)
-    {
-        cout<<"Enter amount: ";
-        cin>>amount[count];
+            if(count<100)
+            {
+            cout<<"Enter amount: ";
+            cin>>amount[count];
 
-        cout<<"Enter category: ";
-        cin>>category[count];
+            cout<<"Enter category: ";
+            cin>>category[count];
 
-        cout<<"Enter description: ";
-        cin.ignore();
-        getline(cin,description[count]);
+            cout<<"Enter description: ";
+            cin.ignore();
+            getline(cin,description[count]);
 
-        count++;
+            count++;
 
-        cout<<"Expense added successfully!\n";
-    }
-    else
-    {
-        cout<<"Expense limit reached!\n";
-    }
-    break;
+            cout<<"Expense added successfully!\n";
+            }
+            else
+            {
+            cout<<"Expense limit reached!\n";
+            }
+            break;
 
             case 2:
-                cout<<"View Expenses selected\n";
-                break;
+
+            if(count==0)
+            {
+            cout<<"No expenses recorded!\n";
+            }
+            else
+            {
+            for(int i=0;i<count;i++)
+            {
+            cout<<"\nExpense "<<i+1<<endl;
+            cout<<"Amount: "<<amount[i]<<endl;
+            cout<<"Category: "<<category[i]<<endl;
+            cout<<"Description: "<<description[i]<<endl;
+            }
+            }
+            break;
 
             case 3:
                 cout<<"Calculate Total selected\n";
