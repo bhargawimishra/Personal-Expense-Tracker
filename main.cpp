@@ -66,8 +66,17 @@ int count=0;
             break;
 
             case 3:
-                cout<<"Calculate Total selected\n";
-                break;
+            {
+            float total=0;
+
+            for(int i=0;i<count;i++)
+            {
+            total=total+amount[i];
+            }
+
+            cout<<"Total Expenses: Rs. "<<total<<endl;
+            }
+            break;
 
             case 4:
                 cout<<"Exiting...\n";
