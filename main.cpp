@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include<string>
+#include <fstream>
 
 int main()
 {
@@ -10,6 +11,15 @@ int main()
 string category[100];
 string description[100];
 int count=0;
+ifstream file("expenses.txt");
+
+while(file>>amount[count]>>category[count])
+{
+    getline(file,description[count]);
+    count++;
+}
+
+file.close();
 
     do
     {
@@ -38,6 +48,12 @@ int count=0;
             getline(cin,description[count]);
 
             count++;
+            ofstream file("expenses.txt",ios::app);
+            file<<amount[count-1]<<" "
+            <<category[count-1]<<" "
+            <<description[count-1]<<endl;
+
+            file.close();
 
             cout<<"Expense added successfully!\n";
             }
