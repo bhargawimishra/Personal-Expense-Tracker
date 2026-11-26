@@ -1,10 +1,15 @@
 
 #include <iostream>
 using namespace std;
+#include<string>
 
 int main()
 {
     int choice;
+    float amount[100];
+string category[100];
+string description[100];
+int count=0;
 
     do
     {
@@ -20,8 +25,27 @@ int main()
         switch(choice)
         {
             case 1:
-                cout<<"Add Expense selected\n";
-                break;
+    if(count<100)
+    {
+        cout<<"Enter amount: ";
+        cin>>amount[count];
+
+        cout<<"Enter category: ";
+        cin>>category[count];
+
+        cout<<"Enter description: ";
+        cin.ignore();
+        getline(cin,description[count]);
+
+        count++;
+
+        cout<<"Expense added successfully!\n";
+    }
+    else
+    {
+        cout<<"Expense limit reached!\n";
+    }
+    break;
 
             case 2:
                 cout<<"View Expenses selected\n";
